@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import { changeProductStock, createProduct, disableProduct, getAdminProducts, updateProduct } from '../controllers/admin-product.controller.js';
+import { authenticate, authorize } from '../middleware/auth.middleware.js';
+const router = Router();
+router.use(authenticate, authorize('admin'));
+router.get('/products', getAdminProducts);
+router.post('/products', createProduct);
+router.patch('/products/:productId', updateProduct);
+router.patch('/products/:productId/stock', changeProductStock);
+router.delete('/products/:productId', disableProduct);
+export default router;
