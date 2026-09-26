@@ -5,6 +5,7 @@ import { env } from './config/env.js';
 import { errorHandler, notFound } from './middleware/error.middleware.js';
 import authRouter from './routes/auth.routes.js';
 import adminProductRouter from './routes/admin-product.routes.js';
+import adminRouter from './routes/admin.routes.js';
 import cartRouter from './routes/cart.routes.js';
 import healthRouter from './routes/health.routes.js';
 import orderRouter from './routes/order.routes.js';
@@ -20,6 +21,7 @@ app.use('/api/health', healthRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/products', productRouter);
 app.use('/api/admin', adminProductRouter);
+app.use('/api/admin', adminRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/orders', orderRouter);
 

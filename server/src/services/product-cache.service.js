@@ -1,6 +1,7 @@
 import { redisClient } from '../config/redis.js';
+import { env } from '../config/env.js';
 
-const PRODUCT_CACHE_PREFIX = 'products:';
+const PRODUCT_CACHE_PREFIX = `products:${env.nodeEnv}:`;
 const CACHE_TTL_SECONDS = 60;
 
 export function productListCacheKey(filters) {
