@@ -113,10 +113,28 @@ export async function getTransactions(req, res) {
 
 export async function getInventory(req, res) {
   const query = {};
-  if (req.query.status === 'low') query.stock = { $gt: 0, $lte: 5 };
-  if (req.query.status === 'out') query.stock = 0;
+
+  if (req.query.status === "low") {
+    query.stock = { $gt: 0, $lte: 5 };
+  }
+
+  if (req.query.status === "out") {
+    query.stock = 0;
+  }
+
   const products = await Product.find(query).sort({ stock: 1, name: 1 });
-  res.status(200).json({ products: products.map(productResponse) });
+
+  const inventory = products.map((product) => ({
+    ...productResponse(product),
+    inventoryStatus:
+      product.stock === 0
+        ? "Out of stock"
+        : product.stock <= 5
+          ? "Low stock"
+          : "In stock",
+  }));
+
+  res.status(200).json({ inventory });
 }
 
 export async function getInventoryHistory(req, res) {

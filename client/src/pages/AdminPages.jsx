@@ -37,7 +37,7 @@ export function AdminDashboardPage() {
             ["Out of stock", data.products.outOfStock],
             ["Customers", data.users.total],
             ["Orders", data.orders.total],
-            ["Revenue", `$${number(data.revenue)}`],
+            ["Revenue", `₹${number(data.revenue)}`],
           ].map(([label, value]) => (
             <div
               key={label}
@@ -220,7 +220,7 @@ export function AdminProductsPage() {
                     {p.sku} · {p.status}
                   </span>
                 </td>
-                <td className="p-3">${number(p.price)}</td>
+                <td className="p-3"> ₹{number(p.price)}</td>
                 <td className="p-3">
                   {p.stock}{" "}
                   <span className="text-xs text-stone-500">
@@ -377,7 +377,7 @@ export function AdminDataPage({ type }) {
                     <br />
                     <span className="text-stone-500">{item.user?.email}</span>
                   </td>
-                  <td className="p-3">${number(item.totalAmount)}</td>
+                  <td className="p-3">₹{number(item.totalAmount)}</td>
                   <td className="p-3">
                     <select
                       value={item.status}
@@ -425,7 +425,7 @@ export function AdminDataPage({ type }) {
                 <tr key={item._id} className="border-t">
                   <td className="p-3">{item.order?.orderNumber}</td>
                   <td className="p-3">{item.user?.email}</td>
-                  <td className="p-3">${number(item.amount)}</td>
+                  <td className="p-3">₹{number(item.amount)}</td>
                   <td className="p-3">{item.paymentStatus}</td>
                 </tr>
               ),
@@ -474,12 +474,12 @@ export function AdminOrderDetailsPage() {
                   {item.productName}{" "}
                   <small className="text-stone-500">× {item.quantity}</small>
                 </span>
-                <b>${number(item.lineTotal)}</b>
+                <b>₹{number(item.lineTotal)}</b>
               </div>
             ))}
           </div>
           <p className="mt-4 text-right text-xl font-bold">
-            ${number(order.totalAmount)}
+            ₹{number(order.totalAmount)}
           </p>
         </div>
       )}
