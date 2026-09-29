@@ -4,6 +4,52 @@ A full-stack inventory management and e-commerce application built for the Nissi
 
 The application supports two roles — **User** and **Admin** — with custom authentication, product browsing, cart and checkout flows, order management, inventory controls, Redis caching, and role-based access control.
 
+
+
+## Live Demo
+
+- **Frontend:** https://inventory-ecommerce-system.vercel.app/
+- **Backend API:** https://inventory-ecommerce-system-api.onrender.com/
+
+## Deployment
+
+The application is deployed using the following setup:
+
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
+- **Caching:** Redis
+- **Frontend → API:** Vercel `/api` rewrite to the Render backend
+
+## Screenshots
+
+### Authentication
+
+| Login | Create Account |
+|---|---|
+| <img width="1884" height="1035" alt="Screenshot 2026-09-29 202424" src="https://github.com/user-attachments/assets/df6c1c36-4151-4b86-9ee0-438136172fb1" /> |<img width="1855" height="937" alt="Screenshot 2026-09-29 202447" src="https://github.com/user-attachments/assets/ea30e28b-4ea3-4af1-9c09-79472d22362d" /> |
+
+
+
+### Product Catalogue
+
+<img width="1884" height="1035" alt="Screenshot 2026-09-29 202424" src="https://github.com/user-attachments/assets/c29206ba-50a6-414a-b021-3c35fae35cd6" />
+
+### Product Details
+
+<img width="1878" height="852" alt="Screenshot 2026-09-29 204102" src="https://github.com/user-attachments/assets/e1830e0e-7039-4e98-80a5-11c24681f4ac" />
+
+
+### Cart
+
+<img width="1850" height="909" alt="Screenshot 2026-09-29 204122" src="https://github.com/user-attachments/assets/366e5748-8f9a-49a4-ac6d-d9575f145d6a" />
+
+
+### Order Confirmation
+
+<img width="1734" height="779" alt="Screenshot 2026-09-29 204138" src="https://github.com/user-attachments/assets/36d81ed5-057d-4e2b-a27c-02c479e12d31" />
+
+
 ## Features
 
 ### User
@@ -19,7 +65,9 @@ The application supports two roles — **User** and **Admin** — with custom au
 - View individual order details and status
 - Persist cart and order data through the backend
 
-### Admin
+#<img width="1734" height="779" alt="Screenshot 2026-09-29 204138" src="https://github.com/user-attachments/assets/c6bd63ca-6d7f-4d0c-afb4-5d32a22855a5" />
+<img width="1734" height="779" alt="Screenshot 2026-09-29 204138" src="https://github.com/user-attachments/assets/0230da16-5678-4c94-aa24-b3e89a76ab0e" />
+## Admin
 
 - Admin dashboard with store and inventory metrics
 - Product catalogue management
